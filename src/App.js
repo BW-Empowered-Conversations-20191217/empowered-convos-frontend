@@ -3,6 +3,7 @@ import './App.css';
 // import Profile from "./Profile";
 // import data from "./data";
 import Contact from "./contact"
+import Header from './header'
 const App = () => {
 
   // const [Data, setData] = useState(data);
@@ -13,6 +14,7 @@ const App = () => {
 
   return (
     <div>
+      <Header />
       <Contact />
       {/* <Profile UserData={Data} /> */}
       </div>
