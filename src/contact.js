@@ -30,7 +30,6 @@ const Contact = () => {
                         department = {data.dept}
                         location = {data.loc}
                         code = {data.code}
-
                         />
                     )
                 })}
