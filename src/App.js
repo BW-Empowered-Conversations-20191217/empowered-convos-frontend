@@ -1,23 +1,19 @@
 import React from 'react';
 import './App.css';
-// import Profile from "./Profile";
-// import data from "./data";
 import Contact from "./contact"
-import Header from './header'
+import Navigation from './header'
 const App = () => {
 
-  // const [Data, setData] = useState(data);
-
-  // const newData = user => {
-  //   setData([...Data, user])
-  // }
 
   return (
-    <div>
-      <Header />
+    <div className="App">
+      <Navigation />
+
+
       <Contact />
-      {/* <Profile UserData={Data} /> */}
-      </div>
+    </div>
+
+
   ) }
 
 

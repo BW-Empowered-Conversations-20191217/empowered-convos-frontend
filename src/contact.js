@@ -8,7 +8,7 @@ const Contact = () => {
     useEffect(() => {
         axios.get("https://api.pokemontcg.io/v1/sets")
         .then(response => {
-            console.log(response.data.sets)
+            console.log(response)
             setData(response.data.sets)
         })
         .catch(error => {
@@ -29,6 +29,7 @@ const Contact = () => {
                         job = {data.job}
                         department = {data.dept}
                         location = {data.loc}
+                        code = {data.code}
 
                         />
                     )

@@ -1,46 +1,103 @@
-.App {
+.image {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 78%);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.img {
+  border: 1px floralwhite solid;
+  height: 500px;
+  padding-top: 1em;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.details {
+  background-color: black;
+  opacity: .5;
+  width: 50%;
+  border-radius: 20px;
+  margin: 0 auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.details h1 {
+  font-size: 1em;
+  font-weight: bold;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.details hr {
+  border-top: dotted white 5px; 
+  width: 50%;
+  margin: 0 auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.card {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.img {
+  width: 40%;
+  height: 703%;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.container section div {
+  display:x flex;
+  flex-direction: row;
+  text-decoration: none;
+  justify-content: space-evenly;
+  
 }
 
 
 .Container {
   display: flex;
-  justify-content: space-around;
-  margin: 1.5rem auto;
-  
+  justify-content: space-evenly;
+  margin: 0 auto;
+  background-color: darkblue;
+  padding: 1.5rem;
 }
+.nav {
+  color: white;
+  font-size: 20px;
+  height: 10%;
+  background-color: blueviolet;
+  border: 0.1px solid rebeccapurple;
+}
+
+
+.nav:hover {
+  background-color: white;
+  color: blueviolet;
+  text-decoration: none;
+}
+
+.nav .a {
+  display: flex;
+  justify-content: center;
+}
+
+.Logo {
+  font-size: 20px;
+  
+} */
+/* 
+.App {
+  background-color: black;
+}
+
+.hey {
+  display: flex;
+} */
