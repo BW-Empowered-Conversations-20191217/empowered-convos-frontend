@@ -55,10 +55,9 @@ const NavBar = props => {
                 <Link to="/">Settings</Link>
             </Navigation>
         </Drawer>
-        <Content />
     </Layout>
 </div>
     )
 }
-
+//!Layout component is what's keeping me from being able to access any other components not made with react-dml...
 export default NavBar;
