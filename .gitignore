@@ -23,3 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 send_sms.js
+notes.md
