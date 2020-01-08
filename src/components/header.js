@@ -1,42 +1,10 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import Login from './Login';
 import {Layout, Header, Navigation, Drawer, Content} from "react-mdl"
 
 const NavBar = props => {
     return (
-        // <Router>
-            
-
-        //     <div className="Container">
-        //         <div className="logo"> 
-        //         <Link to="/">
-        //             <h2 className="Logo"> Logo </h2>
-        //         </Link>
-        //         </div> 
-                
-        //         <Link to='/Homepage'>
-        //             <h2 className="nav"> 
-        //                 <div className="a">Home  </div>
-        //             </h2>
-        //         </Link>
-
-        //         <Link to='Aboutpage'>
-        //             <h2 className="nav"> About Us </h2>
-        //         </Link>
-
-        //         <Link to="ContactPage">
-        //             <h2 className="nav"> Contact Us </h2>
-        //         </Link>
-
-        //         <Link to='Settings'>
-        //             <h2 className="nav"> Setting </h2>
-        //         </Link>
-
-
-        //     </div>
-        // </Router>
-
-
 
         <div style={{height: '40px'}}>
     <Layout fixedHeader>

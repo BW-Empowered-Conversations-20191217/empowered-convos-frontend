@@ -12,8 +12,9 @@ const App = () => {
     <div className="App">
       <Navigation />
       <Contact />
-      <Route path="/Login" component={Login} />
-      
+      <div>
+      <Route path="/login" component={Login} />
+      </div>
     </div>
 
 

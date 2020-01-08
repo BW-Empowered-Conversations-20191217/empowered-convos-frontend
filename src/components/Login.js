@@ -3,30 +3,85 @@ import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
+const LoginForm = styled.div
+`
+background: white;
+margin: 0 auto;
+box-shadow: 0px 2px 1px rgba( 0, 0, 0, 0, 1);
+width: 462px;
+height: 419px;
+left: 489px;
+right: 302px;
+border-radius: 29.5px;
+`
+const LoginPage = styled.div
+`
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+width: 1440px;
+height: 1024px;
+background: #5440C0;
+
+
+`
+const Email = styled.div
+`
+border-radius: 29.5px;
+color: black;
+width: 80px;
+border: 1px solid #5440C0;
+`
+const Password = styled.div
+`
+width: 80px;
+border-radius: 29.5px;
+`
+
+const Button = styled.button
+`
+background: #5440C0;
+width: 184px;
+height: 51px;
+left: 628px;
+right: 579px;
+border-radius: 29.5px;
+`
 
 function Login({ values, errors, touched }) {
 console.log(touched);
 return(
-    
-     <div className ="login-form">
+  <LoginPage>
+     <LoginForm>
+         <div>
+             <h1> Login </h1>
+         </div>
        <Form>
-     <div>
+           <div>
+         <Email>
             {touched.email && errors.email && <p>{errors.email}</p>}
             <Field type="email" name="email" placeholder="Email" /> 
-        </div>
-        <div>
+         </Email>
+         <Password>
             {touched.password && errors.password && <p>{errors.password}</p>}
             <Field type="password" name="password" placeholder="Password" />
-        </div>
-        <label>
+         </Password>
+         </div>
+         <label>
             <Field type="checkbox" name="tos" checked={values.tos} />
             Accept TOS
-        </label>
-            <button type='submit'>Submit</button>
-        <Link to="/"> Register Now</Link>
-       </Form>  
-     </div>
+         </label>
+            <Button type='submit'>Login</Button>
+        
+        
+            <Link to="/"> Register Now</Link>
+        
+            </Form>  
+        </LoginForm>
+     </LoginPage>
  );
 }
 
