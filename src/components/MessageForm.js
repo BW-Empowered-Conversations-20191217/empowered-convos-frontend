@@ -11,8 +11,15 @@ const MessageForm = (props) => {
   const [message, setMessage] = useState("");
   const [charCount, setCharCount] = useState(160);
 
-  const handleChange = e => {
-    
+  const messageHandleChange = e => {
+    setCharCount(e.target.value.length);
+    setMessage(e.target.value);
+  };
+  const recipHandleChange = e => {
+    setRecipient({
+      ...recipient, [e.target.name] : e.target.value
+    })
+    console.log(recipient)
   };
 
   const handleClick = e => {
@@ -25,18 +32,22 @@ const MessageForm = (props) => {
 
       <form className='message-form' onSubmit={handleClick}>
         <Textfield 
+          name="name"
           label='Recipient Name'
           style={{width: '300px'}}
           floatingLabel
-          onChange={()=> {}}
+          value={recipient.name}
+          onChange={recipHandleChange}
         />
         <Textfield 
+          name="phone"
           label='Recipient Phone Number (0000000000)'
           style={{width: '300px'}}
           pattern="-?[0-9]*(\.[0-9]+)?"
           error="Must be a valid phone number!"
           floatingLabel
-          onChange={()=> {}}
+          value={recipient.phone}
+          onChange={recipHandleChange}
         />
         <Textfield 
           label='Your message...'
@@ -44,7 +55,7 @@ const MessageForm = (props) => {
           rows={5}
           maxLength="160"
           
-          onChange={(event)=> {setCharCount(event.target.value.length)}}
+          onChange={messageHandleChange}
         />
         <p>max {charCount}/160 characters</p>
         <Button type="submit" raised ripple>Send</Button>
