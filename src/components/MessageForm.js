@@ -15,11 +15,15 @@ const MessageForm = (props) => {
     
   };
 
+  const handleClick = e => {
+    e.preventDefault();
+  }
+
   return (
     <div className="message-container">
       <h1>Start a Conversation</h1>
 
-      <form className='message-form'>
+      <form className='message-form' onSubmit={handleClick}>
         <Textfield 
           label='Recipient Name'
           style={{width: '300px'}}
@@ -43,7 +47,7 @@ const MessageForm = (props) => {
           onChange={(event)=> {setCharCount(event.target.value.length)}}
         />
         <p>max {charCount}/160 characters</p>
-        <Button raised ripple>Send</Button>
+        <Button type="submit" raised ripple>Send</Button>
       </form>
       <div className='testdiv'></div>
     </div>
