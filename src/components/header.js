@@ -32,6 +32,7 @@ const NavBar = props => {
         //             <h2 className="nav"> Setting </h2>
         //         </Link>
 
+
         //     </div>
         // </Router>
 
