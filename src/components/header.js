@@ -40,12 +40,13 @@ const NavBar = props => {
 
         <div style={{height: '40px'}}>
     <Layout fixedHeader>
-        <Header className="header" title={ <span><strong>The Title</strong></span>}>
+        <Header className="header" title={ <span><strong>Empowered Conversations</strong></span>}>
             <Navigation>
                 <Link to="/">Home</Link>
                 <Link to="/">About</Link>
                 <Link to="/">Contact</Link>
                 <Link to="/">Settings</Link>
+                <Link to="/Login">Login</Link>
             </Navigation>
         </Header>
         <Drawer title="Title">
@@ -54,6 +55,7 @@ const NavBar = props => {
                 <Link to="/">About</Link>
                 <Link to="/">Contact</Link>
                 <Link to="/">Settings</Link>
+                <Link to ="/Login">Login</Link>
             </Navigation>
         </Drawer>
         <Content />
