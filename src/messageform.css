@@ -1,4 +1,17 @@
-.message-container:hover {
- background-color: violet;  
+.message-form{
+  display: flex;
+  flex-direction: column;
+  margin-left: 34%;
 }
 
+.message-form button {
+  width: 100px;
+}
+
+.message-container {
+  margin-top: 5%;
+}
+
+h1 {
+  text-align: center;
+}

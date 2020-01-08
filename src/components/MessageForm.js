@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Textfield } from 'react-mdl';
+import { Textfield, Button } from 'react-mdl';
 import '../messageform.css';
 
 const MessageForm = (props) => {
@@ -8,6 +8,8 @@ const MessageForm = (props) => {
     name: "",
     phone: ""
   });
+  const [message, setMessage] = useState("");
+  const [charCount, setCharCount] = useState(160);
 
   const handleChange = e => {
     
@@ -15,17 +17,33 @@ const MessageForm = (props) => {
 
   return (
     <div className="message-container">
-      <h1>Time to Reach Out</h1>
+      <h1>Start a Conversation</h1>
 
-      <form>
+      <form className='message-form'>
         <Textfield 
           label='Recipient Name'
           style={{width: '300px'}}
+          floatingLabel
           onChange={()=> {}}
         />
-        <label>Recipient Name:</label><input type='text' name='recpientphone' placeholder='phone number'/>
-        <textarea name='message' rows='8' cols='50'>Write your message here...</textarea>
-        <button type="submit">Send</button>
+        <Textfield 
+          label='Recipient Phone Number'
+          style={{width: '300px'}}
+          pattern="-?[0-9]*(\.[0-9]+)?"
+          error="Must be a valid phone number!"
+          floatingLabel
+          onChange={()=> {}}
+        />
+        <Textfield 
+          label='Your message...'
+          style={{width: '500px'}}
+          rows={5}
+          maxLength="160"
+          
+          onChange={(event)=> {setCharCount(event.target.value.length)}}
+        />
+        <p>max {charCount}/160 characters</p>
+        <Button raised ripple>Send</Button>
       </form>
       <div className='testdiv'></div>
     </div>
