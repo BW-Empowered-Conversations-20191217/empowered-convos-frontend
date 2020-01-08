@@ -31,7 +31,7 @@ const MessageForm = (props) => {
           onChange={()=> {}}
         />
         <Textfield 
-          label='Recipient Phone Number'
+          label='Recipient Phone Number (0000000000)'
           style={{width: '300px'}}
           pattern="-?[0-9]*(\.[0-9]+)?"
           error="Must be a valid phone number!"
