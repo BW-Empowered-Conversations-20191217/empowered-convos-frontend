@@ -47,16 +47,14 @@ const Props = props => {
                 </Cell>
 
                 <Cell col={6}>
-                
                     <div className="details"> 
-                    <h2> Profile </h2>
                     
+                    <h2> Profile </h2>
                     <hr/>
-
                     <div className="ListItems">
                     <List>
                         <ListItem className="detailContainer">
-                            <ListItemContent icon="person" className="user" >{props.code}</ListItemContent>
+                            <ListItemContent icon="person" className="user" >{props.code} hfdfjsdo</ListItemContent>
                         </ListItem>
                         <ListItem className="detailContainer">
                             <ListItemContent icon="my_location" className="user">{props.code}</ListItemContent>
