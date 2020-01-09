@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Contact from './components/contact';
 import Login from './components/Login';
+import Register from './components/Register';
 import Navigation from './components/header';
 import { BrowserRouter, Route } from 'react-router-dom';
 
@@ -29,6 +30,12 @@ const App = () => {
           exact
           path="/login"
           component={Login} 
+        />
+
+        <Route
+        exact
+        path="/register"
+        component={Register}
         />
 
       </div>

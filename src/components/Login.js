@@ -11,8 +11,9 @@ const LoginFormStyle = {
     boxShadow: "0px 2px 1px rgba(0, 0, 0, 0, 1)",
     left: "489px",
     right: "302px",
+    width: "190px",
     borderRadius: "29.5px",
-    border: "1px solid #5440c0",
+    border: "1.5px solid #5440c0",
 };
 
 const LoginForm = styled.div`
@@ -20,7 +21,7 @@ const LoginForm = styled.div`
     margin: 0 auto;
     box-shadow: 0px 2px 1px rgba(0, 0, 0, 0, 1);
     width: 462px;
-    height: 419px;
+    height: 390px;
     left: 489px;
     right: 302px;
     border-radius: 29.5px;
@@ -52,7 +53,7 @@ const Password = styled.div`
 const Button = styled.button`
     background: #5440c0;
     width: 184px;
-    height: 51px;
+    height: 41px;
     left: 628px;
     right: 579px;
     border-radius: 29.5px;
@@ -61,6 +62,7 @@ const Button = styled.button`
     font-size: 20px;
     color: white;
     font-weight: bold;
+    align-items: center;
 `;
 
 function Login({ values, errors, touched }) {
