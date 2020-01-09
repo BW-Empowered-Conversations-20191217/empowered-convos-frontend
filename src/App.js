@@ -1,28 +1,40 @@
 import React from 'react';
 import './App.css';
 import Contact from './components/contact';
-import Login from './components/Login'
-import Register from './components/Register'
+import Login from './components/Login';
 import Navigation from './components/header';
-import { Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
+
+
 
 const App = () => {
 
-
   return (
-    <div className="App">
-      <Navigation />
-      
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/register" component={Register} />
-      <Route exact path = "/contact" component={Contact} />
-      
-        
-      
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navigation />
 
 
-  ) }
+        <Route 
+          exact
+          path="/"
+          component={Contact} 
+        />
+        <Route 
+          exact
+          path="/contact"
+          component={Contact} 
+        />
+        <Route 
+          exact
+          path="/login"
+          component={Login} 
+        />
+
+      </div>
+    </BrowserRouter>
+  ) 
+}
 
 
 
