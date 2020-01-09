@@ -5,6 +5,16 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+const LoginFormStyle = {
+    background: "white",
+    margin:" 0 auto",
+    boxShadow: "0px 2px 1px rgba(0, 0, 0, 0, 1)",
+    left: "489px",
+    right: "302px",
+    borderRadius: "29.5px",
+    border: "1px solid #5440c0",
+};
+
 const LoginForm = styled.div`
     background: white;
     margin: 0 auto;
@@ -15,6 +25,7 @@ const LoginForm = styled.div`
     right: 302px;
     border-radius: 29.5px;
 `;
+
 const LoginPage = styled.div`
     display: flex;
     align-items: center;
@@ -59,6 +70,7 @@ function Login({ values, errors, touched }) {
                             type="email"
                             name="email"
                             placeholder="Email"
+                            style={LoginFormStyle}
                         />
                     </Email>
                     <Password>
@@ -69,6 +81,7 @@ function Login({ values, errors, touched }) {
                             type="password"
                             name="password"
                             placeholder="Password"
+                            style={LoginFormStyle}
                         />
                     </Password>
                     <label>
