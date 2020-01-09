@@ -4,7 +4,7 @@ import {Grid, Cell} from "react-mdl";
 import {List, ListItem, ListItemContent} from "react-mdl"
 
 
-const Props = props => {
+const Info = props => {
     return (
         <div className='gridContainer' style={{width:'100%', margin: 'auto'}}>
             <Grid className="image">
@@ -67,4 +67,4 @@ const Props = props => {
     )
 }
 
-export default Props
+export default Info

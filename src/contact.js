@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios";
-import Props from "./Props"
+import Info from "./Info"
 
 const Contact = () => {
     const [Data, setData] = useState([]);
@@ -20,7 +20,7 @@ const Contact = () => {
             <h1>
                 {Data.map((data, i) => {
                     return (
-                        <Props key = {i}
+                        <Info key = {i}
                         img = {data.logoUrl}
                         name = {data.name}
                         lname = {data.lname}
