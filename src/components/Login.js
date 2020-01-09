@@ -24,6 +24,9 @@ const LoginForm = styled.div`
     left: 489px;
     right: 302px;
     border-radius: 29.5px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
 `;
 
 const LoginPage = styled.div`
@@ -31,8 +34,8 @@ const LoginPage = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 1440px;
-    height: 1024px;
+    width: 100%;
+    height: 700px;
     background: #5440c0;
 `;
 const Email = styled.div`
@@ -53,6 +56,11 @@ const Button = styled.button`
     left: 628px;
     right: 579px;
     border-radius: 29.5px;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
 `;
 
 function Login({ values, errors, touched }) {
@@ -87,14 +95,14 @@ function Login({ values, errors, touched }) {
                     <label>
                         <Field
                             type="checkbox"
-                            name="tos"
-                            checked={values.tos}
+                            name="remember"
+                            checked={values.remember}
                         />
-                        Accept TOS
+                        Keep me logged in
                     </label>
                     <Button type="submit">Login</Button>
 
-                    <Link to="/"> Register Now</Link>
+                    <Link to="/register"> Register Now</Link>
                 </Form>
             </LoginForm>
         </LoginPage>
@@ -102,11 +110,11 @@ function Login({ values, errors, touched }) {
 }
 
 const FormikLoginForm = withFormik({
-    mapPropsToValues({ email, password, tos }) {
+    mapPropsToValues({ email, password, remember }) {
         return {
             email: email || "",
             password: password || "",
-            tos: tos || false
+            remember: remember || false
         };
     },
 
