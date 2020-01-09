@@ -16,7 +16,7 @@ return(
 
         <div>
             {touched.name && errors.name && <p>{errors.name}</p>}
-            <Field type="name" name="name" placeholder="Name" />
+            <Field type="name" name="name" placeholder="Username" />
         </div>
          <div>
             {touched.email && errors.email && <p>{errors.email}</p>}
@@ -25,6 +25,9 @@ return(
          <div>
             {touched.password && errors.password && <p>{errors.password}</p>}
             <Field type="password" name="password" placeholder="Password" />
+         </div>
+         <div>
+             {touched.full_name && errors.full_name && <p>{errors.full_name}</p>}
          </div>
          
          </div>
@@ -42,6 +45,7 @@ return(
 const FormikRegistrationForm = withFormik({
 mapPropsToValues({ name, email, password, tos }) {
     return {
+        name: name || "",
         email: email || "",
         password: password || "",
         tos: tos || false,
@@ -49,7 +53,8 @@ mapPropsToValues({ name, email, password, tos }) {
 },
 
 validationSchema: Yup.object().shape({
-    name: Yup.string()
+    Username: Yup.string()
+        .min(8, "Username must be 8 characters or longer")
         .required("Name is Required"),
     email: Yup.string()
         .email("Email not valid")

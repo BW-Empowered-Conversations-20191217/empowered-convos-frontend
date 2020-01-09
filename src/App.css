@@ -19,11 +19,13 @@
 }
 
 .image p {
-  margin: 70px;
+  font-size: 20px;
+  width: 100%;
+  padding-top: 7px;
+  color: rgba(0, 0, 0, 0.6);  
 }
 
 .image h1 {
-  font-family: Akronim;
   font-weight: lighter;
   margin: 20px;
   padding: 15px;
@@ -79,13 +81,8 @@
 
 }
 
-.rightSide {
-  transform: rotateY(90deg) 
-  translateX(200px);
-  transform-origin: right;
 
-}
-
+<<<<<<< HEAD
  .topSide {
   transform: rotateX(-90deg) translateY(-200px);
   transform-origin: top;
@@ -130,6 +127,9 @@
   border-top: 5px dotted rgba(0,0,0, 0.15);
   width: 90%;
 }
+=======
+
+>>>>>>> 51bd8f304e4f21b143b85adcf44e1da97618ed37
 
 .ListItems {
   width: 91%;
@@ -141,12 +141,9 @@
   
 }
 
-.detailContainer {
-  font-size: 40px;
-
-}
 
 .user {
+<<<<<<< HEAD
    box-shadow: 2px 6px 8px rgba(0, 0, 0, 0.15); */
   /* border: solid 1px rgba(0, 0, 0, 0.05);
   font-size: 70px;
@@ -280,3 +277,10 @@
 .hey {
   display: flex;
 } */
+=======
+  /* box-shadow: 2px 6px 8px rgba(0, 0, 0, 0.15); */
+  border: solid 1px rgba(0, 0, 0, 0.05);
+  font-size: 69px;
+  background: white;
+}
+>>>>>>> 51bd8f304e4f21b143b85adcf44e1da97618ed37
