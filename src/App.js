@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Contact from './components/contact';
 import Login from './components/Login'
+import Register from './components/Register'
 import Navigation from './components/header';
 import { Route } from 'react-router-dom';
 
@@ -14,6 +15,9 @@ const App = () => {
       <Contact />
       <div>
       <Route path="/login" component={Login} />
+      </div>
+      <div>
+        <Route path="/register" component={Register} />
       </div>
     </div>
 

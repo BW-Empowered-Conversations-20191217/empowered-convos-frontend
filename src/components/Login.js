@@ -15,6 +15,11 @@ height: 419px;
 left: 489px;
 right: 302px;
 border-radius: 29.5px;
+box-shadow: 0px 2px 1px;
+display: flex;
+flex-direction: column;
+align-items: center;
+
 `
 const LoginPage = styled.div
 `
@@ -32,13 +37,17 @@ const Email = styled.div
 `
 border-radius: 29.5px;
 color: black;
-width: 80px;
-border: 1px solid #5440C0;
+width: 184px;
+border: 2px solid #5440C0;
+
 `
 const Password = styled.div
 `
-width: 80px;
+color: #5440C0;
+width: 184px;
 border-radius: 29.5px;
+border: 1px solid #5440C0;
+
 `
 
 const Button = styled.button
@@ -48,7 +57,25 @@ width: 184px;
 height: 51px;
 left: 628px;
 right: 579px;
-border-radius: 29.5px;
+border-radius: 29px;
+font-size: 21px;
+font-weight: bold;
+color: white;
+`
+
+const LoginArea = styled.div
+`
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-top: 40px;
+width: 200px;
+height: 100%;
+`
+
+const Title = styled.p
+`
+font-size: 26px;
 `
 
 function Login({ values, errors, touched }) {
@@ -56,14 +83,16 @@ console.log(touched);
 return(
   <LoginPage>
      <LoginForm>
-         <div>
-             <h1> Login </h1>
-         </div>
+         <LoginArea>
+            <div>
+              <Title>User Login</Title>  
+                </div> 
+         
        <Form>
-           <div>
+        <div>
          <Email>
             {touched.email && errors.email && <p>{errors.email}</p>}
-            <Field type="email" name="email" placeholder="Email" /> 
+            <Field type="email" name="email" placeholder="Username" /> 
          </Email>
          <Password>
             {touched.password && errors.password && <p>{errors.password}</p>}
@@ -72,14 +101,15 @@ return(
          </div>
          <label>
             <Field type="checkbox" name="tos" checked={values.tos} />
-            Accept TOS
+            Keep Me logged in
          </label>
             <Button type='submit'>Login</Button>
         
         
-            <Link to="/"> Register Now</Link>
+            <Link to="/"> Register Now </Link>
         
-            </Form>  
+            </Form> 
+     </LoginArea>
         </LoginForm>
      </LoginPage>
  );

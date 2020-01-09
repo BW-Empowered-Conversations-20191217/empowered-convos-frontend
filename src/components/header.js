@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import Login from './Login';
+
 import {Layout, Header, Navigation, Drawer, Content} from "react-mdl"
 
 const NavBar = props => {
@@ -14,7 +14,7 @@ const NavBar = props => {
                 <Link to="/">About</Link>
                 <Link to="/">Contact</Link>
                 <Link to="/">Settings</Link>
-                <Link to="/Login">Login</Link>
+                <Link to="/">Login</Link>
             </Navigation>
         </Header>
         <Drawer title="Title">
