@@ -39,7 +39,7 @@ const Email = styled.div`
     border-radius: 29.5px;
     color: black;
     width: 80px;
-    border: 1px solid #5440c0;
+    
 `;
 const Password = styled.div`
     width: 80px;
