@@ -4,6 +4,12 @@ import '../messageform.css';
 
 const MessageForm = (props) => {
   //TODO figure out how to integrate Twilio into sending a message. For test purposed I might have to set up a Twilio message receiving account.
+
+  const accountSid = 'AC6cf643a52859f4a9c0061dd68d460290';
+  const authToken = '273235a54b087d64a245e6f5e0cd8cca';
+  const client = require('twilio')(accountSid, authToken);
+  
+   
   const [recipient, setRecipient] = useState({
     name: "",
     phone: ""
@@ -15,6 +21,7 @@ const MessageForm = (props) => {
     setCharCount(e.target.value.length);
     setMessage(e.target.value);
   };
+
   const recipHandleChange = e => {
     setRecipient({
       ...recipient, [e.target.name] : e.target.value
@@ -22,15 +29,23 @@ const MessageForm = (props) => {
     console.log(recipient)
   };
 
-  const handleClick = e => {
+  const handleSubmit = e => {
     e.preventDefault();
+
+    client.messages
+      .create({
+        body: message,
+        from: '+19049991211',
+        to: `+1${recipient.phone}`
+    })
+    .then(message => console.log(message.sid));
   }
 
   return (
     <div className="message-container">
       <h1>Start a Conversation</h1>
 
-      <form className='message-form' onSubmit={handleClick}>
+      <form className='message-form' onSubmit={handleSubmit} method="post">
         <Textfield 
           name="name"
           label='Recipient Name'
