@@ -1,64 +1,41 @@
-import React from 'react';
-import {Link} from "react-router-dom";
-import {Layout, Header, Navigation, Drawer, Content} from "react-mdl"
+import React from "react";
+import { Link } from "react-router-dom";
+import Login from "./Login";
+import { Layout, Header, Navigation, Drawer, Content } from "react-mdl";
 
 const NavBar = props => {
     return (
-        // <Router>
-            
-
-        //     <div className="Container">
-        //         <div className="logo"> 
-        //         <Link to="/">
-        //             <h2 className="Logo"> Logo </h2>
-        //         </Link>
-        //         </div> 
-                
-        //         <Link to='/Homepage'>
-        //             <h2 className="nav"> 
-        //                 <div className="a">Home  </div>
-        //             </h2>
-        //         </Link>
-
-        //         <Link to='Aboutpage'>
-        //             <h2 className="nav"> About Us </h2>
-        //         </Link>
-
-        //         <Link to="ContactPage">
-        //             <h2 className="nav"> Contact Us </h2>
-        //         </Link>
-
-        //         <Link to='Settings'>
-        //             <h2 className="nav"> Setting </h2>
-        //         </Link>
-
-        //     </div>
-        // </Router>
-
-
-
-        <div style={{height: '40px'}}>
-    <Layout fixedHeader>
-        <Header className="header" title={ <span><strong>The Title</strong></span>}>
-            <Navigation>
-                <Link to="/">Home</Link>
-                <Link to="/">About</Link>
-                <Link to="/">Contact</Link>
-                <Link to="/">Settings</Link>
-            </Navigation>
-        </Header>
-        <Drawer title="Title">
-            <Navigation>
-            <Link to="/">Home</Link>
-                <Link to="/">About</Link>
-                <Link to="/">Contact</Link>
-                <Link to="/">Settings</Link>
-            </Navigation>
-        </Drawer>
-        <Content />
-    </Layout>
-</div>
-    )
-}
+        <div style={{ height: "56px" }}>
+            <Layout fixedHeader style={{position:"relative"}}>
+                <Header
+                    className="header"
+                    title={
+                        <span>
+                            <strong>Empowered Conversations</strong>
+                        </span>
+                    }
+                >
+                    <Navigation>
+                        <Link to="/">Home</Link>
+                        <Link to="/">About</Link>
+                        <Link to="/">Contact</Link>
+                        <Link to="/">Settings</Link>
+                        <Link to="/Login">Login</Link>
+                    </Navigation>
+                </Header>
+                <Drawer title="Title">
+                    <Navigation>
+                        <Link to="/">Home</Link>
+                        <Link to="/">About</Link>
+                        <Link to="/">Contact</Link>
+                        <Link to="/">Settings</Link>
+                        <Link to="/Login">Login</Link>
+                    </Navigation>
+                </Drawer>
+                <Content />
+            </Layout>
+        </div>
+    );
+};
 
 export default NavBar;
