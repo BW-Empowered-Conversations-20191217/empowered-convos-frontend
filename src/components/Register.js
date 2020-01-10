@@ -30,7 +30,7 @@ const RegistrationForm = styled.div`
     margin: 0 auto;
     box-shadow: 0px 2px 1px rgba(0, 0, 0, 0, 1);
     width: 402px;
-    height: 400px;
+    height: 370px;
     left: 489px;
     right: 302px;
     border-radius: 29.5px;
@@ -52,6 +52,7 @@ const Button = styled.button`
     color: white;
     font-weight: bold;
     align-items: center;
+    justify-content: center;
 `;
 
 
