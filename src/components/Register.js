@@ -29,8 +29,8 @@ const RegistrationForm = styled.div`
     background: white;
     margin: 0 auto;
     box-shadow: 0px 2px 1px rgba(0, 0, 0, 0, 1);
-    width: 462px;
-    height: 390px;
+    width: 402px;
+    height: 400px;
     left: 489px;
     right: 302px;
     border-radius: 29.5px;
@@ -99,10 +99,10 @@ return(
 }
 
 const FormikRegistrationForm = withFormik({
-mapPropsToValues({ username, name, email, password, tos }) {
+mapPropsToValues({ username, full_name, email, password, tos }) {
     return {
         username: username || "",
-        name: name || "",
+        full_name: full_name || "",
         email: email || "",
         password: password || "",
         tos: tos || false,
@@ -123,7 +123,7 @@ validationSchema: Yup.object().shape({
         .required("Password is required")
 }),
 
-handleSubmit(values, { resetForm, setErrors, setSubmit}) {
+handleSubmit(values, { resetForm, setErrors, setRegistration}) {
    if (values.email === "taken@gmail.com" ) {
        setErrors({email: "That email is already in use"});
    } else {
@@ -132,11 +132,11 @@ handleSubmit(values, { resetForm, setErrors, setSubmit}) {
         .then (res => {
             console.log(res);
             resetForm();
-            setSubmit(false);
+            setRegistration(false);
         })
         .catch(err => {
             console.log(err);
-            setSubmit(false);
+            setRegistration(false);
         });
    }
   }
