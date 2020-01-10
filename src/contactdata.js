@@ -18,6 +18,10 @@ const Contact = () => {
 
     return (
             <h1>
+                
+
+
+
                 {Data.map((data, i) => {
                     return (
                         <Info key = {i}
@@ -33,7 +37,11 @@ const Contact = () => {
                         />
                     )
                 })}
+
+                
+                
             </h1>
+            
     )
 }
 
