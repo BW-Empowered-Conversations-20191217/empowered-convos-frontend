@@ -10,7 +10,6 @@ function PrivateRoute(props) {
 
   return(
     <Route {...rest} render={(renderProps) => {
-      //?import the "getToken" function from axiosWithAuth and use here?
       if(
         //localStorage.getItem("token")
         getToken()
