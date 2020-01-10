@@ -4,14 +4,16 @@ import './App.css';
 import Contact from './components/contact';
 import Navigation from './components/header';
 import MessageForm from './components/MessageForm';
+import PrivateRoute from './utils/PrivateRoute';
+
 const App = () => {
 
 
   return (
     <div className="App">
       <Navigation />
-      <Route path='/message' component={MessageForm} />
-      <Route path='/userpage' component={Contact} />
+      <PrivateRoute path='/message' component={MessageForm} />
+      <PrivateRoute path='/userpage' component={Contact} />
     </div>
   ) }
 
