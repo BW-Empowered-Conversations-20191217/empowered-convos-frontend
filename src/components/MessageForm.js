@@ -5,8 +5,8 @@ import '../messageform.css';
 const MessageForm = (props) => {
   //TODO figure out how to integrate Twilio into sending a message. For test purposed I might have to set up a Twilio message receiving account.
 
-  const accountSid = 'AC6cf643a52859f4a9c0061dd68d460290';
-  const authToken = '273235a54b087d64a245e6f5e0cd8cca';
+  const accountSid = 'ACCT_SID';
+  const authToken = 'AUTH_TKN';
   const client = require('twilio')(accountSid, authToken);
   
    
