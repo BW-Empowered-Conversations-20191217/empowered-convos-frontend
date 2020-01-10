@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios";
-import Props from "./Props";
+import Props from "./Props"
 
 const Contact = () => {
-    const [pokeData, setData] = useState([]);
+    const [Data, setData] = useState([]);
     
     useEffect(() => {
         axios.get("https://api.pokemontcg.io/v1/sets")
@@ -18,19 +18,18 @@ const Contact = () => {
 
     return (
             <h1>
-                {pokeData.map((data, i) => {
+                {Data.map((data, i) => {
                     return (
-                        <Props 
-                            key = {i}
-                            img = {data.logoUrl}
-                            name = {data.name}
-                            lname = {data.lname}
-                            email = {data.email}
-                            phone = {data.phone}
-                            job = {data.job}
-                            department = {data.dept}
-                            location = {data.loc}
-                            code = {data.code}
+                        <Props key = {i}
+                        img = {data.logoUrl}
+                        name = {data.name}
+                        lname = {data.lname}
+                        email = {data.email}
+                        phone = {data.phone}
+                        job = {data.job}
+                        department = {data.dept}
+                        location = {data.loc}
+                        code = {data.code}
                         />
                     )
                 })}
