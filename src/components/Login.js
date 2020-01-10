@@ -72,6 +72,7 @@ function Login({ values, errors, touched }) {
             <LoginForm>
                 <h1> Login </h1>
                 <Form>
+                    
                     <Email>
                         {touched.email && errors.email && (
                             <p>{errors.email}</p>
@@ -83,6 +84,7 @@ function Login({ values, errors, touched }) {
                             style={LoginFormStyle}
                         />
                     </Email>
+                    
                     <Password>
                         {touched.password && errors.password && (
                             <p>{errors.password}</p>
