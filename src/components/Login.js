@@ -1,151 +1,65 @@
-import React from "react";
-import { withFormik, Form, Field } from "formik";
-import * as Yup from "yup";
-import axios from "axios";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import React, {useState, useEffect } from 'react';
+import { withFormik, Form, Field } from 'formik';
+import * as Yup from 'yup';
 
-const LoginFormStyle = {
-    background: "white",
-    margin:" 0 auto",
-    boxShadow: "0px 2px 1px rgba(0, 0, 0, 0, 1)",
-    left: "489px",
-    right: "302px",
-    width: "190px",
-    borderRadius: "29.5px",
-    border: "1.5px solid #5440c0",
-};
-
-const LoginForm = styled.div`
-    background: white;
-    margin: 0 auto;
-    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0, 1);
-    width: 462px;
-    height: 390px;
-    left: 489px;
-    right: 302px;
-    border-radius: 29.5px;
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
-`;
-
-const LoginPage = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    height: 700px;
-    background: #5440c0;
-`;
-const Email = styled.div`
-    border-radius: 29.5px;
-    color: black;
-    width: 80px;
+const Login = ({ values, errors, touched, status }) => {
     
-`;
-const Password = styled.div`
-    width: 80px;
-    border-radius: 29.5px;
-`;
 
-const Button = styled.button`
-    background: #5440c0;
-    width: 184px;
-    height: 41px;
-    left: 628px;
-    right: 579px;
-    border-radius: 29.5px;
-    display: flex;
-    flex-direction: column;
-    font-size: 20px;
-    color: white;
-    font-weight: bold;
-    align-items: center;
-`;
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-function Login({ values, errors, touched }) {
 
-    return (
-        <LoginPage>
-            <LoginForm>
-                <h1> Login </h1>
-                <Form>
-                    <Email>
-                        {touched.email && errors.email && (
-                            <p>{errors.email}</p>
-                        )}
-                        <Field
-                            type="email"
-                            name="email"
-                            placeholder="Email"
-                            style={LoginFormStyle}
-                        />
-                    </Email>
-                    <Password>
-                        {touched.password && errors.password && (
-                            <p>{errors.password}</p>
-                        )}
-                        <Field
-                            type="password"
-                            name="password"
-                            placeholder="Password"
-                            style={LoginFormStyle}
-                        />
-                    </Password>
-                    <label>
-                        <Field
-                            type="checkbox"
-                            name="remember"
-                            checked={values.remember}
-                        />
-                        Keep me logged in
-                    </label>
-                    <Button type="submit">Login</Button>
+useEffect (() => {
+    status && setEmail (email => [...email, status]);
+    status && setPassword (password => [...password, status])
+}, [status]);
 
-                    <Link to="/register"> Register Now</Link>
-                </Form>
-            </LoginForm>
-        </LoginPage>
-    );
+return(
+    <div className ="login-form">
+        <Form>
+            <label htmlFor="Email">
+                Email
+                <Field
+                    id='email'
+                    type='text'
+                    name='email'
+                    placeholder='Email'
+                />  
+                {touched.email && errors.email(
+                    <p className='errors'>{errors.email}</p>
+                )}  
+            </label>
+
+            <label htmlFor='Password'>
+                Password
+                <Field
+                    id='password'
+                    type='text'
+                    name='password'
+                    placeholder='Password'
+                />
+                {touched.password && errors.password(
+                    <p className= 'errors'> {errors.password}</p>
+                )}
+            </label>
+
+            <button type='submit'>Submit</button>
+        </Form>
+        {}
+
+
+
+
+    </div>
+)
+
+
+
+
+
 }
 
-const FormikLoginForm = withFormik({
-    mapPropsToValues({ email, password, remember }) {
-        return {
-            email: email || "",
-            password: password || "",
-            remember: remember || false
-        };
-    },
+export default Login;
 
-    validationSchema: Yup.object().shape({
-        email: Yup.string()
-            .email("Email not valid")
-            .required("Email is required"),
-        password: Yup.string()
-            .min(8, "Password must be 8 characters or longer")
-            .required("Password is required")
-    }),
 
-    handleSubmit(values, { resetForm, setErrors, setSubmit }) {
-        if (values.email === "taken@gmail.com") {
-            setErrors({ email: "That email is already in use" });
-        } else {
-            axios
-                .post("https://guidr-project.herokuapp.com/users/login", values)
-                .then(res => {
-                    console.log(res);
-                    resetForm();
-                    setSubmit(false);
-                })
-                .catch(err => {
-                    console.log(err);
-                    setSubmit(false);
-                });
-        }
-    }
-})(Login);
 
-export default FormikLoginForm;
