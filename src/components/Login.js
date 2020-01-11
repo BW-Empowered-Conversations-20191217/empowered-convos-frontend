@@ -19,15 +19,16 @@ const LoginFormStyle = {
 const LoginForm = styled.div`
     background: white;
     margin: 0 auto;
-    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0, 1);
-    width: 462px;
-    height: 390px;
+    box-shadow: 8px 2px 2px rgba(0, 0, 0, 0, 1);
+    width: 400px;
+    height: 350px;
     left: 489px;
     right: 302px;
     border-radius: 29.5px;
     display: flex; 
     flex-direction: column;
     align-items: center;
+    opacity: 0.9;
 `;
 
 const LoginPage = styled.div`
@@ -63,6 +64,7 @@ const Button = styled.button`
     color: white;
     font-weight: bold;
     align-items: center;
+    justify-content: center;
 `;
 
 function Login({ values, errors, touched }) {
@@ -72,6 +74,7 @@ function Login({ values, errors, touched }) {
             <LoginForm>
                 <h1> Login </h1>
                 <Form>
+                    
                     <Email>
                         {touched.email && errors.email && (
                             <p>{errors.email}</p>
@@ -83,6 +86,7 @@ function Login({ values, errors, touched }) {
                             style={LoginFormStyle}
                         />
                     </Email>
+                    
                     <Password>
                         {touched.password && errors.password && (
                             <p>{errors.password}</p>
