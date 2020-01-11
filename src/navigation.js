@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Link} from "react-router-dom";
-import {Layout, Header, Navigation, Drawer, Content} from "react-mdl"
+import {Layout, Header, Navigation, Drawer, Content} from "react-mdl";
+import { ReactComponent as SvgLogo } from './ec_logo.svg';
 
 const initialState = {
     search: "",
@@ -26,17 +27,11 @@ const NavBar = () => {
             searchError = "need an input"
         }
 
-
         if(searchError) {
             setData({searchError})
             return false
         }
-
         return true;
-
-
-
-
     }
 
     const onSubmit = event => {
@@ -48,15 +43,13 @@ const NavBar = () => {
         }
     }
 
-
-
     return (
         <div style={{height: '56px'}}>
-    <Layout fixedHeader style={{positive: "absolute"}}>
-        <Header className="header" title={ <span><strong>The Title</strong></span>}>
+    {/* <Layout fixedHeader style={{positive: "absolute"}}> */}
+        <Header className="header" title={ <span><SvgLogo className='logo'/></span>}>
             <Navigation>
-                <Link className="navHover" to="Home"> Home </Link>
-                <Link className="navHover" to="Profile">Profile</Link>
+                <Link className="navHover" to="/"> Home </Link>
+                <Link className="navHover" to="/userpage">Profile</Link>
                 <Link className="navHover" to="About">About</Link>
                 <Link className="navHover" to="ContactUs">Contact</Link>
                 <Link className="navHover" to="Settings">Settings</Link>
@@ -78,19 +71,20 @@ const NavBar = () => {
 
             </Navigation>
         </Header>
-        <Drawer title="Title">
+        {/* <Drawer title="Title">
             <Navigation>
                 <Link to="/">Home</Link>
-                <Link to="Profile">Profile</Link>
+                <Link to="/Profile">Profile</Link>
                 <Link to="/">About</Link>
                 <Link to="/ContactUs">Contact</Link>
                 <Link to="/">Settings</Link>
             </Navigation>
-        </Drawer>
-        <Content />
-    </Layout>
+        </Drawer> */}
+    {/* </Layout> */}
 </div>
     )
 }
 
 export default NavBar;
+
+//TODO: add a log out button that removes token.

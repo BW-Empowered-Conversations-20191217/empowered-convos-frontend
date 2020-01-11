@@ -3,7 +3,9 @@ import { ReactComponent as SvgLogo } from '../ec_logo.svg';
 import {Link} from "react-router-dom";
 import {Layout, Header, Navigation, Drawer, Content} from "react-mdl"
 
+
 const NavBar = props => {
+    
     return (
 
         <div style={{height: '10%'}}>
