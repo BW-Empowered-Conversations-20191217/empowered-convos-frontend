@@ -1,0 +1,19 @@
+.message-form{
+  display: flex;
+  flex-direction: column;
+  margin-left: 34%;
+}
+
+.message-form button {
+  width: 100px;
+}
+
+.message-container {
+  margin-top: 5%;
+  font-family: 'Questrial', sans-serif !important;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Questrial', sans-serif !important;
+}

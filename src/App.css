@@ -58,7 +58,6 @@
   background: white;
 }
 
-
 .ContactUsContainer {
   color: red;
 }
@@ -69,4 +68,8 @@
   text-align: center;
   border-radius: 10%;
   border: none;
+}
+
+.logo {
+  width: 70px;
 }
