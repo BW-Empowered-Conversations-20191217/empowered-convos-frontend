@@ -25,6 +25,7 @@ height: 700px;
 background: #5440c0;
 `;
 
+
 const RegistrationForm = styled.div`
     background: white;
     margin: 0 auto;
