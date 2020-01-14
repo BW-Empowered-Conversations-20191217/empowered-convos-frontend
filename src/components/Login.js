@@ -135,20 +135,20 @@ const FormikLoginForm = withFormik({
             .required("Password is required")
     }),
 
-    handleSubmit(values, { resetForm, setErrors, setSubmit }) {
+    handleSubmit(values, { setErrors, setStatus, resetForm }) {
         if (values.email === "taken@gmail.com") {
             setErrors({ email: "That email is already in use" });
         } else {
             axios
-                .post("https://guidr-project.herokuapp.com/users/login", values)
+                .post("https://reqres.in/api/users/", values)
                 .then(res => {
                     console.log(res);
+                    setStatus(res.data);
                     resetForm();
-                    setSubmit(false);
                 })
                 .catch(err => {
                     console.log(err);
-                    setSubmit(false);
+                    
                 });
         }
     }

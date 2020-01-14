@@ -125,7 +125,7 @@ validationSchema: Yup.object().shape({
         .required("Password is required")
 }),
 
-handleSubmit(values, { resetForm, setErrors, setRegistration}) {
+handleSubmit(values, { setErrors, setStatus, resetForm }) {
    if (values.email === "taken@gmail.com" ) {
        setErrors({email: "That email is already in use"});
    } else {
@@ -133,12 +133,11 @@ handleSubmit(values, { resetForm, setErrors, setRegistration}) {
         .post("https://guidr-project.herokuapp.com/users/signUp", values)
         .then (res => {
             console.log(res);
+            setStatus(response.data);
             resetForm();
-            setRegistration(false);
         })
         .catch(err => {
             console.log(err);
-            setRegistration(false);
         });
    }
   }
