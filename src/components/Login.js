@@ -140,7 +140,7 @@ const FormikLoginForm = withFormik({
             setErrors({ email: "That email is already in use" });
         } else {
             axios
-                .post("https://reqres.in/api/users/", values)
+                .post("https://reqres.in/api/login/", values)
                 .then(res => {
                     console.log(res);
                     setStatus(res.data);
