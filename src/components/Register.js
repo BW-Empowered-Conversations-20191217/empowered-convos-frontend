@@ -133,7 +133,7 @@ handleSubmit(values, { setErrors, setStatus, resetForm }) {
         .post("https://guidr-project.herokuapp.com/users/signUp", values)
         .then (res => {
             console.log(res);
-            setStatus(response.data);
+            setStatus(res.data);
             resetForm();
         })
         .catch(err => {
